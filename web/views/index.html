@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель Мониторинга</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Панель Мониторинга</h1>
+
+        <!-- Управление -->
+        <div class="mb-4">
+            <button id="initializeBtn" class="btn btn-danger me-3">Инициализация последовательности</button>
+            <button id="refreshBtn" class="btn btn-primary">Обновить графики</button>
+        </div>
+
+        <!-- График Current Sequence -->
+        <div class="mb-5">
+            <h2>Текущая последовательность</h2>
+            <canvas id="currentSequenceChart" height="200"></canvas>
+        </div>
+
+        <!-- График Predictions -->
+        <div class="mb-5">
+            <h2>Прогнозы</h2>
+            <canvas id="predictionsChart" height="200"></canvas>
+        </div>
+
+        <div class="d-flex align-items-center mb-3">
+            <label for="stepsInput" class="me-2">Шаги прогнозирования:</label>
+            <input id="stepsInput" type="number" class="form-control me-3" placeholder="Введите количество шагов"
+                min="1">
+            <button id="predictBtn" class="btn btn-success">Прогнозировать</button>
+        </div>
+
+        <!-- Сводка -->
+        <div class="mb-5">
+            <h2>Статистика Состояний Датчиков</h2>
+            <table id="anomaliesTable" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Название датчика</th>
+                        <th>Normal</th>
+                        <th>Minor</th>
+                        <th>Moderate</th>
+                        <th>Critical</th>
+                        <th>Итого</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Данные будут динамически заполняться -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Загрузка JSON -->
+        <div>
+            <h2>Добавление Записей и Прогнозирование</h2>
+            <form id="uploadForm" class="mb-3">
+                <label for="jsonFile" class="form-label">Загрузите JSON-файл:</label>
+                <input type="file" class="form-control mb-3" id="jsonFile" accept=".json">
+                <button type="submit" class="btn btn-primary me-3">Добавить запись</button>
+            </form>
+
+            <div id="uploadStatus" class="mt-3"></div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>

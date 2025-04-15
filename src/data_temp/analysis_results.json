@@ -1,0 +1,1362 @@
+{
+  "timestamp": "2025-04-15T09:28:15.232510",
+  "total_records": 15,
+  "anomalies_summary": {
+    "normal": 0,
+    "minor": 0,
+    "moderate": 0,
+    "critical": 15
+  },
+  "predictions": [
+    {
+      "step": "1",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.746237736940383,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 67.96723237037659,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 496.42114578187466,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 37.94735677726567,
+          "absolute_deviation": 303.57885421812534,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 420.56866303086275,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.01343684792518,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.761391199827194,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.4594486761093135,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.1626754164695745,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.43869175732135773,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "2",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.746923302412032,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 67.96633853912354,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 496.31121231615543,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 37.96109846048057,
+          "absolute_deviation": 303.68878768384457,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 420.57210646569723,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.0157532185316,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.76138609021902,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.4594518011808395,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.1627106481790546,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.43877690017223364,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "3",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.746808258891104,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 67.9667223930359,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 496.04748156666756,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 37.994064804166555,
+          "absolute_deviation": 303.95251843333244,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 420.61770461499685,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.02066458761692,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.760447057783605,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.459456456899643,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.1627983456850055,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.4388751655817032,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "4",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.746012345552444,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 67.9682111978531,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 495.6495297253132,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 38.04380878433585,
+          "absolute_deviation": 304.3504702746868,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 420.70022918283934,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.0278768479824,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.758697300851345,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.459462324380874,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.1629345822334294,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.4389852720499039,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "5",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.744505823254585,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 67.97082414627076,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 495.12389436364174,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 38.10951320454478,
+          "absolute_deviation": 304.87610563635826,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 420.81820681691164,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.03710916042327,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.756162367463112,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.459469148516654,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.1631132495403294,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.4391030418872834,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "6",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.742289474606512,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 67.97455027103425,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 494.48043662309647,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 38.18994542211294,
+          "absolute_deviation": 305.51956337690353,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 420.96902757883066,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.04802208542823,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.752889947295188,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.459476546645164,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.163328130245209,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.43922452807426454,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "7",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.73937660396099,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 67.979345703125,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 493.7246349155903,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 38.284420635551214,
+          "absolute_deviation": 306.2753650844097,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 421.1501825600862,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.06030161380768,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.748928297758102,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.459484518766403,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.1635721343755727,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.43934806466102605,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "8",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.735821993947027,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 67.98512818813325,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 492.86580254137516,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 38.391774682328105,
+          "absolute_deviation": 307.13419745862484,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 421.35819464921946,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.0736503213644,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.74435292750597,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.459492682218552,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.1638402444124223,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.43947295963764194,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "9",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.731685122847555,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 67.99179627895356,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 491.91007532179356,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 38.511240584775805,
+          "absolute_deviation": 308.08992467820644,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 421.5898393094539,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.08781943321227,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.73922799050808,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.459501037001609,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.1641262429952626,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.43960011005401617,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "10",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.72705129504204,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 67.99921288490296,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 490.8681178987026,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 38.64148526266217,
+          "absolute_deviation": 309.1318821012974,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 421.8412942439317,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.1026044011116,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.733646027445793,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.459509264230728,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.1644266396760945,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.4397305923700333,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "11",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.721997988820075,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 68.00726833343506,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 489.74573738873005,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 38.781782826408744,
+          "absolute_deviation": 310.25426261126995,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 422.1094527840614,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.11784490346908,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.72766835361719,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.459517619013786,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.164736526012421,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.4398666620254517,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "12",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.716619899868963,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 68.01580359935761,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 488.55447497963905,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 38.93069062754512,
+          "absolute_deviation": 311.44552502036095,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 422.3907788842916,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.13341600000858,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.721380129158497,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.459525846242904,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.1650537204742433,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.44000931859016423,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "13",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.71098902821541,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 68.02472271919251,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 487.3015256524086,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 39.087309293448925,
+          "absolute_deviation": 312.6984743475914,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 422.68262892961496,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.14924139976502,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.714840966165067,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.4595343285799025,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.1653752779960636,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.4401605355739594,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "14",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.705185982584954,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 68.0338940858841,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 485.9979192763567,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 39.25026009045541,
+          "absolute_deviation": 314.0020807236433,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 422.9821656644344,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.16525476276874,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.708117289543154,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.459542810916901,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.165699889659882,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.4403208768367768,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    },
+    {
+      "step": "15",
+      "status": "critical",
+      "sensors": {
+        "temp_hum_1": {
+          "value": 22.699284328222273,
+          "status": "normal",
+          "range": [
+            15,
+            32
+          ],
+          "name": "Температура воздуха"
+        },
+        "temp_hum_2": {
+          "value": 68.04321899414063,
+          "status": "normal",
+          "range": [
+            50,
+            80
+          ],
+          "name": "Влажность воздуха"
+        },
+        "light_1": {
+          "value": 484.65289610624313,
+          "status": "critical",
+          "direction": "ниже",
+          "deviation_percent": 39.41838798671961,
+          "absolute_deviation": 315.34710389375687,
+          "range": [
+            800,
+            1600
+          ],
+          "name": "Освещенность"
+        },
+        "co2_1": {
+          "value": 423.28704014420504,
+          "status": "normal",
+          "range": [
+            350,
+            700
+          ],
+          "name": "Уровень CO2"
+        },
+        "soil_moisture_1": {
+          "value": 74.181416285038,
+          "status": "normal",
+          "range": [
+            60,
+            80
+          ],
+          "name": "Влажность почвы"
+        },
+        "soil_temp_1": {
+          "value": 21.701265872716903,
+          "status": "normal",
+          "range": [
+            18,
+            25
+          ],
+          "name": "Температура почвы"
+        },
+        "soil_ph_1": {
+          "value": 6.4595515483617785,
+          "status": "normal",
+          "range": [
+            6.0,
+            7.0
+          ],
+          "name": "pH почвы"
+        },
+        "ec_1": {
+          "value": 2.1660261374711993,
+          "status": "normal",
+          "range": [
+            1.0,
+            2.5
+          ],
+          "name": "Электропроводность почвы"
+        },
+        "leaf_wetness_1": {
+          "value": 0.44049085497856144,
+          "status": "normal",
+          "range": [
+            0.3,
+            0.7
+          ],
+          "name": "Влажность листьев"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+    "sensors": [
+        {
+            "id": "temp_hum_1",
+            "model": "DHT22",
+            "type": "Температура воздуха",
+            "unit": "°C",
+            "location": "Центральная зона теплицы",
+            "height": "1.2 м от пола",
+            "range": "-40°C до 80°C",
+            "accuracy": "±0.5°C",
+            "connection": {
+                "interface": "GPIO",
+                "pin": "GPIO4",
+                "voltage": "3.3V"
+            },
+            "maintenance": {
+                "calibration_period": "6 месяцев",
+                "cleaning_period": "3 месяца"
+            },
+            "description": "Основной датчик температуры в теплице, размещен в центральной зоне для контроля средней температуры воздуха"
+        },
+        {
+            "id": "temp_hum_2",
+            "model": "DHT22",
+            "type": "Влажность воздуха",
+            "unit": "%",
+            "location": "Верхний уровень теплицы",
+            "height": "2.4 м от пола",
+            "range": "0-100% (без конденсата)",
+            "accuracy": "±2-5%",
+            "connection": {
+                "interface": "GPIO",
+                "pin": "GPIO17",
+                "voltage": "3.3V"
+            },
+            "maintenance": {
+                "calibration_period": "6 месяцев",
+                "cleaning_period": "2 месяца"
+            },
+            "description": "Датчик отслеживает влажность на верхнем уровне, где обычно она выше из-за конденсации и испарения"
+        },
+        {
+            "id": "light_1",
+            "model": "TSL2591",
+            "type": "Освещенность",
+            "unit": "лк",
+            "location": "Под светильниками",
+            "height": "1.8 м от пола",
+            "range": "188 мкЛк до 88,000 лк",
+            "sensitivity": "Высокая, включая ИК-спектр",
+            "connection": {
+                "interface": "I2C",
+                "address": "0x29",
+                "voltage": "3.3V"
+            },
+            "maintenance": {
+                "calibration_period": "12 месяцев",
+                "cleaning_period": "1 месяц"
+            },
+            "description": "Высокочувствительный датчик освещённости, способный измерять как инфракрасный, так и полный спектр света"
+        },
+        {
+            "id": "co2_1",
+            "model": "MH-Z19B",
+            "type": "Уровень CO₂",
+            "unit": "ppm",
+            "location": "На уровне растений",
+            "height": "0.7 м от пола",
+            "range": "0-5000 ppm",
+            "accuracy": "±50ppm +5% от показания",
+            "connection": {
+                "interface": "UART",
+                "tx_pin": "GPIO14",
+                "rx_pin": "GPIO15",
+                "voltage": "5V"
+            },
+            "maintenance": {
+                "calibration_period": "6 месяцев",
+                "self_calibration": true
+            },
+            "description": "NDIR-датчик CO₂, расположен на уровне листьев для точного контроля уровня углекислого газа в зоне фотосинтеза"
+        },
+        {
+            "id": "soil_moisture_1",
+            "model": "Capacitive Soil Moisture v1.2",
+            "type": "Влажность почвы",
+            "unit": "%",
+            "location": "Грядка A (томаты)",
+            "depth": "10 см",
+            "range": "0-100%",
+            "sensor_type": "Емкостной",
+            "connection": {
+                "interface": "ADC",
+                "pin": "Аналоговый через MCP3008",
+                "voltage": "3.3V"
+            },
+            "maintenance": {
+                "calibration_period": "3 месяца",
+                "cleaning_period": "При пересадке"
+            },
+            "description": "Емкостной датчик влажности почвы, устойчивый к коррозии, размещен в зоне выращивания томатов"
+        },
+        {
+            "id": "soil_temp_1",
+            "model": "DS18B20",
+            "type": "Температура почвы",
+            "unit": "°C",
+            "location": "Грядка B (огурцы)",
+            "depth": "8 см",
+            "range": "-55°C до +125°C",
+            "accuracy": "±0.5°C",
+            "connection": {
+                "interface": "1-Wire",
+                "pin": "GPIO3",
+                "voltage": "3.3V"
+            },
+            "maintenance": {
+                "calibration_period": "12 месяцев",
+                "waterproof": true
+            },
+            "description": "Водонепроницаемый датчик температуры почвы, помещен в грядку с огурцами для контроля температуры корневой зоны"
+        },
+        {
+            "id": "soil_ph_1",
+            "model": "DFRobot SEN0161",
+            "type": "pH почвы",
+            "unit": "pH",
+            "location": "Грядка C (зелень)",
+            "depth": "5 см",
+            "range": "0-14 pH",
+            "accuracy": "±0.1 pH",
+            "connection": {
+                "interface": "ADC",
+                "pin": "Аналоговый через MCP3008",
+                "voltage": "5V"
+            },
+            "maintenance": {
+                "calibration_period": "1 месяц",
+                "buffer_solution": "pH 4.0, 7.0"
+            },
+            "description": "Аналоговый датчик pH, размещен в грядке с зеленью, требует регулярной калибровки для точных показаний"
+        },
+        {
+            "id": "pressure_1",
+            "model": "BMP180",
+            "type": "Атмосферное давление",
+            "unit": "гПа",
+            "location": "Контрольный пункт",
+            "height": "1.5 м от пола",
+            "range": "300-1100 гПа",
+            "accuracy": "±0.12 гПа",
+            "connection": {
+                "interface": "I2C",
+                "address": "0x77",
+                "voltage": "3.3V"
+            },
+            "maintenance": {
+                "calibration_period": "12 месяцев"
+            },
+            "description": "Барометрический датчик давления, также измеряет температуру. Используется для прогнозирования погодных изменений"
+        },
+        {
+            "id": "ec_1",
+            "model": "DFRobot DFR0300",
+            "type": "Электропроводность почвы",
+            "unit": "мСм/см",
+            "location": "Грядка D (гидропоника)",
+            "submersion": "Полностью в растворе",
+            "range": "0-20 мСм/см",
+            "temperature_compensation": true,
+            "connection": {
+                "interface": "ADC",
+                "pin": "Аналоговый через MCP3008",
+                "voltage": "5V"
+            },
+            "maintenance": {
+                "calibration_period": "1 месяц",
+                "cleaning_period": "2 недели"
+            },
+            "description": "Датчик измеряет электропроводность раствора в гидропонной системе, что позволяет контролировать концентрацию питательных веществ"
+        },
+        {
+            "id": "leaf_wetness_1",
+            "model": "YL-83",
+            "type": "Влажность листьев",
+            "unit": "мВ",
+            "location": "Листья растений (основной ярус)",
+            "height": "1.2 м от пола",
+            "range": "0-1023 (аналоговое значение)",
+            "sensor_type": "Резистивный",
+            "connection": {
+                "interface": "ADC",
+                "pin": "Аналоговый через MCP3008",
+                "voltage": "3.3V"
+            },
+            "maintenance": {
+                "cleaning_period": "1 неделя",
+                "replacement_period": "6 месяцев"
+            },
+            "description": "Датчик определяет наличие конденсата на растениях, что важно для предотвращения грибковых заболеваний"
+        }
+    ],
+    "sensor_groups": {
+        "air_monitoring": ["temp_hum_1", "temp_hum_2", "co2_1", "pressure_1"],
+        "soil_monitoring": ["soil_moisture_1", "soil_temp_1", "soil_ph_1", "ec_1"],
+        "plant_monitoring": ["light_1", "leaf_wetness_1"],
+        "critical_alerts": ["temp_hum_1", "co2_1", "soil_moisture_1"]
+    },
+    "recommended_sampling": {
+        "frequent": {
+            "sensors": ["temp_hum_1", "temp_hum_2", "light_1"],
+            "interval": "5 минут"
+        },
+        "medium": {
+            "sensors": ["co2_1", "soil_moisture_1", "leaf_wetness_1"],
+            "interval": "15 минут"
+        },
+        "infrequent": {
+            "sensors": ["soil_temp_1", "soil_ph_1", "pressure_1", "ec_1"],
+            "interval": "30 минут"
+        }
+    }
+}
