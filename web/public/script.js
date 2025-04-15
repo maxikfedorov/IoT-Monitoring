@@ -1,5 +1,71 @@
 const API_BASE_URL = "http://127.0.0.1:5000";
 
+function createCustomSpinner() {
+    const wrapper = document.createElement('div');
+    // Сохраняем вертикальную выравнивающую обёртку и margin кнопки
+    wrapper.style.display = 'inline-block';
+    wrapper.style.verticalAlign = 'middle';
+    wrapper.style.width = '40px';
+    wrapper.style.height = '40px';
+
+    // Сохраняем класс для правильного внешнего вида рядом с input
+    wrapper.className = 'me-3';
+
+    const spinner = document.createElement('div');
+    spinner.className = 'spinner';
+    spinner.innerHTML = `
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    `;
+    spinner.setAttribute('id', 'predict-spinner');
+
+    wrapper.appendChild(spinner);
+    return wrapper;
+}
+
+
+function showNotification(message, type = "success") {
+    const MAX_NOTIFICATIONS = 5;
+    const container = ensureNotificationContainer();
+
+    // Удаляем просроченные уведомления
+    while (container.children.length >= MAX_NOTIFICATIONS) {
+        // Удаляем самое старое (первое) уведомление
+        container.firstChild.remove();
+    }
+
+    const notification = document.createElement('div');
+    notification.className = `alert alert-${type} mb-2 shadow`;
+    notification.textContent = message;
+
+    // Удаляем уведомление через 3 секунды (или чуть позже, если стали старым)
+    const removeNotification = () => {
+        if (notification.parentNode) notification.remove();
+    };
+    setTimeout(removeNotification, 3000);
+
+    container.appendChild(notification);
+}
+
+// В начале файла или перед первой функцией уведомлений
+function ensureNotificationContainer() {
+    let container = document.getElementById('notifications-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'notifications-container';
+        container.style.position = 'fixed';
+        container.style.top = '20px';
+        container.style.right = '20px';
+        container.style.zIndex = '1050';
+        container.style.display = 'flex';
+        container.style.flexDirection = 'column';
+        container.style.alignItems = 'flex-end';
+        document.body.appendChild(container);
+    }
+    return container;
+}
+
+
 // Переменные для графиков
 let currentSequenceChart;
 let predictionsChart;
@@ -88,7 +154,6 @@ async function fetchAndRenderCharts() {
         console.error("Ошибка:", error);
     }
 }
-
 
 // Отображение графика текущей последовательности
 function renderCurrentSequenceChart(currentSequence) {
@@ -202,12 +267,17 @@ async function initializeSequence() {
 // Функция для выполнения прогнозирования
 async function predictSteps() {
     const stepsInput = document.getElementById('stepsInput');
+    const predictBtn = document.getElementById('predictBtn');
     const steps = parseInt(stepsInput.value, 10);
 
     if (isNaN(steps) || steps <= 0) {
-        alert("Пожалуйста, введите корректное количество шагов для прогнозирования!");
+        showNotification("Пожалуйста, введите корректное количество шагов для прогнозирования!", "danger");
         return;
     }
+
+    // Заменяем кнопку на спиннер
+    const spinner = createCustomSpinner();
+    predictBtn.parentNode.replaceChild(spinner, predictBtn);
 
     try {
         const response = await fetch(`${API_BASE_URL}/predict`, {
@@ -218,18 +288,24 @@ async function predictSteps() {
 
         if (!response.ok) {
             const error = await response.json();
-            alert(`Ошибка при прогнозировании: ${error.message}`);
+            showNotification(`Ошибка при прогнозировании: ${error.message}`, "danger");
             return;
         }
 
         const result = await response.json();
         renderPredictionsChart(result.predictions); // Обновляем график прогнозов
-        alert(`Прогнозирование на ${steps} шагов выполнено успешно!`);
+        showNotification(`Прогнозирование на ${steps} шагов выполнено успешно!`, "success");
+
     } catch (error) {
         console.error("Ошибка прогнозирования:", error);
-        alert("Ошибка выполнения запроса на прогнозирование!");
+        showNotification(`Ошибка при прогнозировании: ${error.message || "Произошла ошибка"}`, "danger");
+    } finally {
+        // Возвращаем кнопку на место спиннера
+        const parent = spinner.parentNode;
+        if (parent) parent.replaceChild(predictBtn, spinner);
     }
 }
+
 
 // Функция для обработки загрузки JSON-файла
 document.getElementById('uploadForm').addEventListener('submit', async event => {
@@ -286,14 +362,14 @@ document.getElementById('uploadForm').addEventListener('submit', async event => 
 });
 
 // Добавляем обработчик для кнопки инициализации
-document.getElementById('initializeBtn').addEventListener('click', async function() {
+document.getElementById('initializeBtn').addEventListener('click', async function () {
     try {
         // Показываем индикатор загрузки или блокируем кнопку
         const button = this;
         const originalText = button.textContent;
         button.disabled = true;
         button.textContent = 'Инициализация...';
-        
+
         // Вызываем API для инициализации последовательности
         const response = await fetch(`${API_BASE_URL}/initialize`, {
             method: 'POST',
@@ -302,12 +378,12 @@ document.getElementById('initializeBtn').addEventListener('click', async functio
         const result = await response.json();
 
         if (response.ok) {
-            alert("Инициализация выполнена: " + result.message);
-            // Обновляем графики после инициализации
-            fetchAndRenderCharts();
+            showNotification("Инициализация выполнена: " + result.message, "success");
+            fetchAndRenderCharts(); // Обновляем графики после инициализации
         } else {
-            alert("Ошибка инициализации: " + result.message);
+            showNotification("Ошибка инициализации: " + result.message, "danger");
         }
+
     } catch (error) {
         console.error("Ошибка инициализации последовательности:", error);
         alert("Произошла ошибка при инициализации последовательности");
@@ -319,29 +395,19 @@ document.getElementById('initializeBtn').addEventListener('click', async functio
 });
 
 // Добавляем обработчик для кнопки обновления графиков
-document.getElementById('refreshBtn').addEventListener('click', async function() {
+document.getElementById('refreshBtn').addEventListener('click', async function () {
     try {
         // Показываем индикатор загрузки или блокируем кнопку
         const button = this;
         const originalText = button.textContent;
         button.disabled = true;
         button.textContent = 'Обновление...';
-        
+
         // Вызываем функцию для получения данных и обновления графиков
         await fetchAndRenderCharts();
-        
-        // Показываем уведомление об успешном обновлении
-        const notification = document.createElement('div');
-        notification.className = 'alert alert-success position-fixed top-0 end-0 m-3';
-        notification.style.zIndex = '1050';
-        notification.textContent = 'Графики успешно обновлены';
-        document.body.appendChild(notification);
-        
-        // Удаляем уведомление через 3 секунды
-        setTimeout(() => {
-            notification.remove();
-        }, 3000);
-        
+
+        showNotification('Графики успешно обновлены');
+
     } catch (error) {
         console.error("Ошибка обновления графиков:", error);
         alert("Произошла ошибка при обновлении графиков");
@@ -352,9 +418,126 @@ document.getElementById('refreshBtn').addEventListener('click', async function()
     }
 });
 
-
 // Добавление обработчиков для кнопки прогнозирования
 document.getElementById('predictBtn').addEventListener('click', predictSteps);
 
 // Инициализация
 fetchAndRenderCharts();
+
+// --- Управление ботом и мониторингом ---
+
+async function updateBotButton() {
+    const btn = document.getElementById('botToggleBtn');
+    try {
+        const res = await fetch(`${API_BASE_URL}/bot/status`);
+        const { status } = await res.json();
+        if (status === 'running') {
+            btn.textContent = "Остановить бота";
+            btn.classList.remove('btn-outline-secondary');
+            btn.classList.add('btn-outline-danger');
+        } else {
+            btn.textContent = "Запустить бота";
+            btn.classList.remove('btn-outline-danger');
+            btn.classList.add('btn-outline-secondary');
+        }
+    } catch {
+        btn.textContent = "Ошибка бота";
+        btn.disabled = true;
+    }
+}
+
+async function toggleBot() {
+    const btn = document.getElementById('botToggleBtn');
+    btn.disabled = true;
+    const action = btn.textContent.includes('Остановить') ? 'stop' : 'start';
+    try {
+        await fetch(`${API_BASE_URL}/bot/${action}`, { method: 'POST' });
+    } catch { }
+    await updateBotButton();
+    btn.disabled = false;
+}
+
+document.getElementById('botToggleBtn').addEventListener('click', toggleBot);
+
+
+// --- Кнопки управления мониторингом и ботом ---
+
+async function updateBotButton() {
+    const btn = document.getElementById('botToggleBtn');
+    btn.disabled = true;
+    try {
+        const res = await fetch(`${API_BASE_URL}/bot/status`);
+        const json = await res.json();
+        if (json.status === 'running') {
+            btn.textContent = 'Остановить бота';
+            btn.classList.remove('btn-outline-secondary');
+            btn.classList.add('btn-outline-danger');
+        } else {
+            btn.textContent = 'Запустить бота';
+            btn.classList.remove('btn-outline-danger');
+            btn.classList.add('btn-outline-secondary');
+        }
+        btn.disabled = false;
+    } catch {
+        btn.textContent = 'Ошибка состояния бота';
+        btn.classList.remove('btn-outline-secondary', 'btn-outline-danger');
+        btn.classList.add('btn-outline-dark');
+        btn.disabled = true;
+    }
+}
+
+async function updateMonitoringButton() {
+    const btn = document.getElementById('monitoringToggleBtn');
+    btn.disabled = true;
+    try {
+        const res = await fetch(`${API_BASE_URL}/monitoring/status`);
+        const json = await res.json();
+        if (json.status === 'active') {
+            btn.textContent = 'Остановить мониторинг';
+            btn.classList.remove('btn-outline-success');
+            btn.classList.add('btn-outline-danger');
+        } else {
+            btn.textContent = 'Включить мониторинг';
+            btn.classList.remove('btn-outline-danger');
+            btn.classList.add('btn-outline-success');
+        }
+        btn.disabled = false;
+    } catch {
+        btn.textContent = 'Ошибка мониторинга';
+        btn.classList.remove('btn-outline-success', 'btn-outline-danger');
+        btn.classList.add('btn-outline-dark');
+        btn.disabled = true;
+    }
+}
+
+async function toggleBot() {
+    const btn = document.getElementById('botToggleBtn');
+    btn.disabled = true;
+    const action = btn.textContent.includes('Остановить') ? 'stop' : 'start';
+    try {
+        await fetch(`${API_BASE_URL}/bot/${action}`, { method: 'POST' });
+    } catch { }
+    await updateBotButton();
+    btn.disabled = false;
+}
+
+async function toggleMonitoring() {
+    const btn = document.getElementById('monitoringToggleBtn');
+    btn.disabled = true;
+    const action = btn.textContent.includes('Остановить') ? 'stop' : 'start';
+    try {
+        await fetch(`${API_BASE_URL}/monitoring/${action}`, { method: 'POST' });
+    } catch { }
+    await updateMonitoringButton();
+    btn.disabled = false;
+}
+
+// Навешиваем обработчики после загрузки DOM
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('botToggleBtn').addEventListener('click', toggleBot);
+    document.getElementById('monitoringToggleBtn').addEventListener('click', toggleMonitoring);
+
+    // При первой загрузке страницы подгружаем статус
+    updateBotButton();
+    updateMonitoringButton();
+});
